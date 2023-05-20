@@ -1,18 +1,19 @@
 {
-    "name": "SolidJS",
-    "version": "1.0.0",
-    "description": "Learning reactivity with SolidJS",
-    "main": "index.html",
-    "scripts": {
-      "start": "parcel index.html --open",
-      "build": "parcel build index.html"
-    },
-    "dependencies": {
-      "solid-js": "latest"
-    },
-    "devDependencies": {
-      "@babel/core": "7.2.0",
-      "parcel-bundler": "^1.6.1"
-    },
-    "keywords": []
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^4.1.1",
+    "vite-plugin-solid": "^2.5.0"
+  },
+  "dependencies": {
+    "solid-js": "^1.6.10"
   }
+}
