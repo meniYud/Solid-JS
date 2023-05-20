@@ -1,17 +1,17 @@
-import { createSignal, createEffect } from "./reactivity";
+import { createSignal, createEffect, createMemo, untrack } from "./reactivity";
 
 export const App = () => {
     const [count, setCount] = createSignal(0);
     const [count2, setCount2] = createSignal(2);
-    const [show, setShow] = createSignal(true);
+
+    const sum = createMemo(() => count() + count2())
 
     createEffect( () => {
-        if(show()) console.log(count())
-        else console.log(count2())
+        // console.log(count(), count2(), sum())
+        console.log(untrack(() => count()))
     } )
 
-    setShow(false)
     setCount(10)
 
-    return <p>{count()}</p>
+    return <p>{sum()}</p>
 }

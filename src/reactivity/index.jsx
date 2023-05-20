@@ -1,11 +1,11 @@
-const context = [];
+let context = [];
 
 function subscribe(observer, subscriptions){
-
     subscriptions.add(observer)
     observer.dependencies.add(subscriptions)
 
 }
+
 function cleanup(observer){
     for(const dep of observer.dependencies){
         dep.delete(observer)
@@ -46,4 +46,19 @@ export function createEffect(fn) {
     }
 
     effect.execute()
+}
+
+export function createMemo(fn){
+    const [signal, setSignal] = createSignal()
+    createEffect(() => setSignal(fn()))
+
+    return signal;
+}
+
+export function untrack(fn){
+    const prevContext = context;
+    context = [];
+    const res = fn();
+    context = prevContext;
+    return res;
 }
