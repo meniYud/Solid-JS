@@ -3,6 +3,7 @@ import { render } from 'solid-js/web';
 
 import {App as AppVanila} from './vanila-reactivity/main';
 import {App as AppSolid} from './solid-reactivity/main';
+import {App as AppSolidJSX} from './jsx-reactivity/main';
 
 
 const root = document.getElementById('root');
@@ -13,4 +14,4 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
-render(() => <AppSolid />, root);
+render(() => <AppSolidJSX />, root);
