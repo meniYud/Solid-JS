@@ -1,4 +1,4 @@
-import { createSignal, createEffect, createMemo, untrack } from "./reactivity";
+import { createSignal, createEffect, createMemo, untrack } from "./reactivityFunctions";
 
 export const App = () => {
     const [count, setCount] = createSignal(0);
