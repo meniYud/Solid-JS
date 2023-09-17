@@ -1,11 +1,12 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
 
-import {App as AppVanila} from './vanila-reactivity/main';
-import {App as AppSolid} from './solid-reactivity/main';
-import {App as AppSolidJSX} from './jsx-reactivity/main';
-import {App as FGReactivity} from './fine-grained-reactivity/main';
-import {App as ReactiveList} from './lists-reactivity/main';
+import {App as AppVanila} from './reactivity/vanila-reactivity/main';
+import {App as AppSolid} from './reactivity/solid-reactivity/main';
+import {App as AppSolidJSX} from './reactivity/jsx-reactivity/main';
+import {App as FGReactivity} from './reactivity/fine-grained-reactivity/main';
+import {App as ReactiveList} from './reactivity/lists-reactivity/main';
+import {App as ControledFlow} from './flow-control/main';
 
 
 const root = document.getElementById('root');
@@ -16,4 +17,4 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
-render(() => <ReactiveList />, root);
+render(() => <ControledFlow />, root);
