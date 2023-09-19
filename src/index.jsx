@@ -7,6 +7,7 @@ import {App as AppSolidJSX} from './reactivity/jsx-reactivity/main';
 import {App as FGReactivity} from './reactivity/fine-grained-reactivity/main';
 import {App as ReactiveList} from './reactivity/lists-reactivity/main';
 import {App as ControledFlow} from './flow-control/main';
+import {App as ComponentProps} from './components/main';
 
 
 const root = document.getElementById('root');
@@ -17,4 +18,4 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
-render(() => <ControledFlow />, root);
+render(() => <ComponentProps />, root);
